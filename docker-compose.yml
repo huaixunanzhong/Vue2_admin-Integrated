@@ -1,0 +1,14 @@
+services:
+  vue_admin_all_frontend:
+    build: ./
+    container_name: vue_admin_all_frontend
+    networks:
+      - vue_admin_all_vue
+      - share_docs_nginx
+    command: npm run serve
+    ports:
+      - 8999:8999
+networks:
+  vue_admin_all_vue:
+  share_docs_nginx:
+    external: true
